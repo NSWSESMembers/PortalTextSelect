@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "PortalTextSellect",
+  "short_name": "PortalTextSelect",
+  "description": "Allow text selection on portal.ses.nsw.gov.au",
+  "version": "2016.11.14.1",
+    "icons": {
+    "128": "clipboard.png",
+    "64":"clipboard.png"
+  },
+  "permissions": [
+    "https://portal.ses.nsw.gov.au/*",
+    "activeTab"
+  ],
+  "browser_action": {
+  "default_icon": "clipboard.png"
+},
+   "background": {
+     "scripts": ["background.js"],
+     "persistent": false
+   },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://portal.ses.nsw.gov.au/*"
+      ],
+      "js": ["contentscripts/portal.js"]
+    }
+  ]
+}
